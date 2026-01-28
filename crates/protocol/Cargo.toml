@@ -1,0 +1,11 @@
+[package]
+name = "protocol"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bevy_remote = "0.18.0"
+bevy_ecs = "0.18.0"
+bevy_app = "0.18.0"
+
+[dev-dependencies]
