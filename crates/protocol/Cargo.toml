@@ -4,8 +4,17 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-bevy_remote = "0.18.0"
-bevy_ecs = "0.18.0"
-bevy_app = "0.18.0"
+bevy = { version = "0.18.0", features = ["bevy_remote"] }
 
 [dev-dependencies]
+bevy = { version = "0.18.0", features = ["bevy_remote", "free_camera"] }
+serde_json = { version = "*" }
+
+[features]
+free_camera = ["bevy/free_camera"]
+
+
+[[example]]
+name = "protocol_basic"
+path = "examples/basic.rs"
+required-features = ["free_camera"]
