@@ -5,12 +5,16 @@ import { queryClient } from "./lib/queryclient";
 import "./index.css";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { ThemeProvider } from "@/components/theme-provider";
+
 export function App() {
   return (
     <StrictMode>
       <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen={false} />
-        <RouterProvider router={router} />
+        <ThemeProvider>
+          <ReactQueryDevtools initialIsOpen={false} />
+          <RouterProvider router={router} />
+        </ThemeProvider>
       </QueryClientProvider>
     </StrictMode>
   );
