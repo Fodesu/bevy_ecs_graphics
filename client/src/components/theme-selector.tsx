@@ -42,8 +42,8 @@ export function ThemeSelector() {
                 "flex flex-col items-center gap-2 rounded-lg border-2 p-4 transition-all",
                 "hover:border-primary/50 hover:bg-accent",
                 currentTheme === value
-                  ? "border-primary bg-primary/5"
-                  : "border-muted bg-background"
+                  ? "border-primary/40 bg-primary/5"
+                  : "border-muted bg-background",
               )}
             >
               <Icon
@@ -51,7 +51,7 @@ export function ThemeSelector() {
                   "size-6",
                   currentTheme === value
                     ? "text-primary"
-                    : "text-muted-foreground"
+                    : "text-muted-foreground",
                 )}
               />
               <span
@@ -59,7 +59,7 @@ export function ThemeSelector() {
                   "text-sm font-medium",
                   currentTheme === value
                     ? "text-primary"
-                    : "text-muted-foreground"
+                    : "text-muted-foreground",
                 )}
               >
                 {label}

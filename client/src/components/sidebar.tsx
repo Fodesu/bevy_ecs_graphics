@@ -8,6 +8,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { cn } from "@/lib/utils";
 
 import { Home, Settings } from "lucide-react";
 import { NavLink } from "react-router";
@@ -35,17 +36,18 @@ export function AppSidebar() {
             <SidebarMenu>
               {sidebar_items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton className="" asChild>
+                  <SidebarMenuButton size="lg" asChild>
                     <NavLink to={item.url}>
                       {({ isActive }) => (
                         <>
                           <item.icon />
                           <span
-                            className={
+                            className={cn(
+                              "text-lg",
                               isActive
                                 ? "text-black font-bold"
-                                : "text-gray-600"
-                            }
+                                : "text-gray-600",
+                            )}
                           >
                             {item.title}
                           </span>

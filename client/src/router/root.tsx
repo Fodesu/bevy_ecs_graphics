@@ -1,6 +1,5 @@
 import type { RouteObject } from "react-router";
 import { Outlet } from "react-router";
-import { Header } from "@/components/Header";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/sidebar";
 import { settingsObject } from "./setting";
@@ -23,7 +22,6 @@ function Layout() {
     >
       <AppSidebar />
       <main className="h-full w-full pl-[--sidebar-width]">
-        <Header />
         <Outlet />
       </main>
     </SidebarProvider>

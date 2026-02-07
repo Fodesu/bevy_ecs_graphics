@@ -12,7 +12,7 @@ export interface Connection {
 
 const DEFAULT_CONNECTION: Connection = {
   id: "default",
-  alias: "Bevy Server",
+  alias: "localhost",
   host: "localhost",
   port: "15702",
 };
@@ -72,12 +72,10 @@ export function useConnections() {
   const updateConnection = useCallback(
     (id: string, updates: Partial<Omit<Connection, "id">>) => {
       setConnections((prev) =>
-        prev.map((conn) =>
-          conn.id === id ? { ...conn, ...updates } : conn
-        )
+        prev.map((conn) => (conn.id === id ? { ...conn, ...updates } : conn)),
       );
     },
-    []
+    [],
   );
 
   const deleteConnection = useCallback(
@@ -91,7 +89,7 @@ export function useConnections() {
         return filtered;
       });
     },
-    [activeConnectionId]
+    [activeConnectionId],
   );
 
   const setActiveConnection = useCallback((id: string) => {

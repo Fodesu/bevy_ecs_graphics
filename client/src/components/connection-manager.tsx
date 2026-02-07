@@ -128,7 +128,8 @@ export function ConnectionManager() {
             key={conn.id}
             className={cn(
               "flex items-center justify-between rounded-lg border p-3",
-              activeConnectionId === conn.id && "border-primary bg-primary/5"
+              activeConnectionId === conn.id &&
+                "border-primary/40 bg-primary/5",
             )}
           >
             {editingId === conn.id ? (
@@ -160,7 +161,12 @@ export function ConnectionManager() {
                   className="h-7 text-sm"
                 />
                 <div className="flex justify-end gap-1">
-                  <Button size="icon" variant="ghost" className="size-7" onClick={handleCancel}>
+                  <Button
+                    size="icon"
+                    variant="ghost"
+                    className="size-7"
+                    onClick={handleCancel}
+                  >
                     <X className="size-3" />
                   </Button>
                   <Button size="icon" className="size-7" onClick={handleUpdate}>
@@ -177,7 +183,7 @@ export function ConnectionManager() {
                       "flex size-5 items-center justify-center rounded-full border-2",
                       activeConnectionId === conn.id
                         ? "border-primary bg-primary"
-                        : "border-muted-foreground/30 hover:border-primary/50"
+                        : "border-muted-foreground/30 hover:border-primary/50",
                     )}
                   >
                     {activeConnectionId === conn.id && (

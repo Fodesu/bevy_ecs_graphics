@@ -1,3 +1,4 @@
+import { Header } from "@/components/Header";
 import Methods from "@/components/methods";
 import { Outlet, type RouteObject } from "react-router";
 
@@ -8,7 +9,8 @@ export const indexObject: RouteObject = {
 
 function Index() {
   return (
-    <div className="bg-background relative flex w-full h-full">
+    <div className="bg-background relative flex w-full h-full flex-col">
+      <Header />
       <div>
         <Methods />
       </div>
