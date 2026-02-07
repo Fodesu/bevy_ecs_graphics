@@ -10,12 +10,13 @@ export function Header() {
 
   return (
     <header className="bg-background relative top-0 z-50 w-full h-16 flex items-center border-b">
-      <div className="flex w-full gap-4 items-center justify-between px-4">
-        <div className="flex items-center gap-4">
+      <div className="flex w-full items-center px-4">
+        {/* Left: Sidebar + Connection */}
+        <div className="flex items-center gap-4 shrink-0">
           <SidebarTrigger className="h-10 w-10" />
           
           {/* Connection Status */}
-          <div className="flex items-center gap-3 rounded-lg border bg-muted/50 px-3 py-1.5">
+          <div className="flex items-center gap-3 rounded-lg border bg-muted/50 px-3 py-1.5 min-w-0">
             <div className="flex items-center gap-2">
               {isLoading ? (
                 <Spinner className="size-4" />
@@ -27,7 +28,7 @@ export function Header() {
                   )}
                 />
               )}
-              <span className="text-sm font-medium">{alias}</span>
+              <span className="text-sm font-medium truncate max-w-[100px]">{alias}</span>
             </div>
             
             <div className="h-4 w-px bg-border" />
@@ -50,15 +51,16 @@ export function Header() {
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        {/* Center: Search Box (small + centered) */}
+        <div className="flex-1 flex justify-center">
           <Button variant="outline" className="rounded-full h-9 gap-2">
             <SearchIcon className="size-4" />
             <div className="text-gray-500 text-xs">Ctrl K</div>
           </Button>
-          <Button variant="outline" className="h-9 w-9 p-0">
-            <span className="text-xs font-medium">B</span>
-          </Button>
         </div>
+
+        {/* Right: Empty for balance */}
+        <div className="shrink-0 w-[200px]" />
       </div>
     </header>
   );
